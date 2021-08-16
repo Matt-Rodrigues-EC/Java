@@ -5,6 +5,7 @@
  */
 package View;
 
+import Model.Agendamento;
 import Model.Cliente;
 import Model.Servico;
 import Model.Usuario;
@@ -21,19 +22,24 @@ public class Main {
         
         //System.err.println(barba.getValor());
         
-        Cliente cliente = new Cliente(1, "Stefane", 'F', "000000", "stef@gmail.com", "Madalena");
+        Cliente cliente = new Cliente(1, "Stef", "Madalena", "60005123");
         
-//        System.err.println(cliente.getID());
-//        System.err.println(cliente.getNome());
+        System.err.println(cliente.getID());
+        System.err.println(cliente.getNome());
 //        System.err.println(cliente.getSexo());
 //        System.err.println(cliente.getNumero());
 //        System.err.println(cliente.getEmail());
-//        System.err.println(cliente.getEndereco());
+        System.err.println(cliente.getEndereco());
+        System.err.println(cliente.getCep());
 
-        Usuario user = new Usuario(1, "Stefane", "abacate");
+        Usuario user = new Usuario(1, "Stef", "Cuscuz", "Administrador");
         
         System.err.println(user.getNome());
         System.err.println(user.getSenha());
+        
+        Agendamento evento = new Agendamento(1, cliente, barba, 19.99, "08/02/2022 09:30");
+        
+        
         
         
     }

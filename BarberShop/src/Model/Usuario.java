@@ -11,30 +11,29 @@ import java.util.Date;
  *
  * @author skees
  */
-public class Usuario {
+public class Usuario extends Pessoa {
     
-    private int ID;
-    private String Nome;
+//    private int ID;
+//    private String Nome;
+//    private char Sexo;
+//    private Date Nascimento;
+//    private String Telefone;
+//    private String Email;
+//    private String RG;
+
     private String Senha;
     private String NivelAcesso;
-    private char Sexo;
-    private Date Nascimento;
-    private String Telefone;
-    private String Email;
-    private String RG;
 
-    public Usuario(int ID, String Nome, String Senha) {
-        this.ID = ID;
-        this.Nome = Nome;
+    public Usuario(int ID, String Nome, String Senha, String NivelAcesso) {
+        super(ID, Nome);
         this.Senha = Senha;
+        this.NivelAcesso = NivelAcesso;
     }
 
-    public String getNome() {
-        return Nome;
-    }
-
-    public void setNome(String Nome) {
-        this.Nome = Nome;
+    public Usuario(int ID, String Nome, String Senha, String NivelAcesso, char Sexo, String Nascimento, String Numero, String Email, String RG) {
+        super(ID, Nome, Sexo, Nascimento, Numero, Email, RG);
+        this.Senha = Senha;
+        this.NivelAcesso = NivelAcesso;
     }
 
     public String getSenha() {
@@ -52,45 +51,7 @@ public class Usuario {
     public void setNivelAcesso(String NivelAcesso) {
         this.NivelAcesso = NivelAcesso;
     }
-
-    public char getSexo() {
-        return Sexo;
-    }
-
-    public void setSexo(char Sexo) {
-        this.Sexo = Sexo;
-    }
-
-    public Date getNascimento() {
-        return Nascimento;
-    }
-
-    public void setNascimento(Date Nascimento) {
-        this.Nascimento = Nascimento;
-    }
-
-    public String getTelefone() {
-        return Telefone;
-    }
-
-    public void setTelefone(String Telefone) {
-        this.Telefone = Telefone;
-    }
-
-    public String getEmail() {
-        return Email;
-    }
-
-    public void setEmail(String Email) {
-        this.Email = Email;
-    }
-
-    public String getRG() {
-        return RG;
-    }
-
-    public void setRG(String RG) {
-        this.RG = RG;
-    }
+    
+    
     
 }
