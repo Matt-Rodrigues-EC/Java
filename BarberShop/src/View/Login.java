@@ -36,6 +36,8 @@ public class Login extends javax.swing.JFrame {
         LabelBackgroundLogin = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1366, 768));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         LabelLogin.setFont(new java.awt.Font("N-Gage", 0, 48)); // NOI18N
@@ -70,6 +72,7 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(LabelFundoLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, -30, 620, 460));
 
         LabelBackgroundLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/Logo.png"))); // NOI18N
+        LabelBackgroundLogin.setMaximumSize(new java.awt.Dimension(1366, 768));
         getContentPane().add(LabelBackgroundLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
