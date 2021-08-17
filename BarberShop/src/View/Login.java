@@ -5,17 +5,25 @@
  */
 package View;
 
+import Controller.LoginController;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
 /**
  *
  * @author skees
  */
 public class Login extends javax.swing.JFrame {
 
+    private final LoginController controller;
+
     /**
      * Creates new form Login
      */
     public Login() {
         initComponents();
+        controller = new LoginController(this);
     }
 
     /**
@@ -32,6 +40,7 @@ public class Login extends javax.swing.JFrame {
         TextUsuario = new javax.swing.JTextField();
         Senha = new javax.swing.JLabel();
         TextSenha = new javax.swing.JPasswordField();
+        BotaoLogin = new javax.swing.JButton();
         LabelFundoLogin = new javax.swing.JLabel();
         LabelBackgroundLogin = new javax.swing.JLabel();
 
@@ -54,7 +63,7 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(Usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, 170, 50));
 
         TextUsuario.setBackground(new java.awt.Color(255, 255, 255));
-        TextUsuario.setFont(new java.awt.Font("Javanese Text", 0, 18)); // NOI18N
+        TextUsuario.setFont(new java.awt.Font("Javanese Text", 0, 14)); // NOI18N
         TextUsuario.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(TextUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, 240, 30));
 
@@ -62,12 +71,23 @@ public class Login extends javax.swing.JFrame {
         Senha.setForeground(new java.awt.Color(255, 255, 255));
         Senha.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Senha.setText("Senha");
-        getContentPane().add(Senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 210, 140, 30));
+        getContentPane().add(Senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 190, 140, 30));
 
         TextSenha.setBackground(new java.awt.Color(255, 255, 255));
-        TextSenha.setFont(new java.awt.Font("Javanese Text", 0, 18)); // NOI18N
+        TextSenha.setFont(new java.awt.Font("Javanese Text", 0, 14)); // NOI18N
         TextSenha.setForeground(new java.awt.Color(0, 0, 0));
-        getContentPane().add(TextSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 230, 30));
+        getContentPane().add(TextSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, 230, 30));
+
+        BotaoLogin.setBackground(new java.awt.Color(51, 51, 51));
+        BotaoLogin.setFont(new java.awt.Font("N-Gage", 0, 12)); // NOI18N
+        BotaoLogin.setForeground(new java.awt.Color(255, 255, 255));
+        BotaoLogin.setText("Login");
+        BotaoLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoLoginActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BotaoLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 230, 30));
 
         LabelFundoLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/Agenda-PainelFundo.png"))); // NOI18N
         LabelFundoLogin.setText("jLabel2");
@@ -79,6 +99,11 @@ public class Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BotaoLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoLoginActionPerformed
+        // Executa quando clica no botão
+        this.controller.FizTarefa();
+    }//GEN-LAST:event_BotaoLoginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -116,6 +141,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotaoLogin;
     private javax.swing.JLabel LabelBackgroundLogin;
     private javax.swing.JLabel LabelFundoLogin;
     private javax.swing.JLabel LabelLogin;
@@ -124,4 +150,28 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JTextField TextUsuario;
     private javax.swing.JLabel Usuario;
     // End of variables declaration//GEN-END:variables
+
+    public void ExibeMensagem(String Mensagem) {
+        
+        JOptionPane.showMessageDialog(null, Mensagem);
+        
+    }
+
+    public JPasswordField getTextSenha() {
+        return TextSenha;
+    }
+
+    public void setTextSenha(JPasswordField TextSenha) {
+        this.TextSenha = TextSenha;
+    }
+
+    public JTextField getTextUsuario() {
+        return TextUsuario;
+    }
+
+    public void setTextUsuario(JTextField TextUsuario) {
+        this.TextUsuario = TextUsuario;
+    }
+    
+    
 }
