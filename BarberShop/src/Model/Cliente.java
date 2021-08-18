@@ -23,19 +23,17 @@ public class Cliente extends Pessoa {
     private String Endereco;
     private String Cep;
 
-    public Cliente(int ID, String Nome, char Sexo, String Nascimento, String Numero, String Email, String RG, String Endereco, String Cep) {
-        super(ID, Nome, Sexo, Nascimento, Numero, Email, RG);
+    public Cliente(String Nome, char Sexo, String Nascimento, String Numero, String Email, String RG, String Endereco, String Cep) {
+        super(Nome, Sexo, Nascimento, Numero, Email, RG);
         this.Endereco = Endereco;
         this.Cep = Cep;
     }
 
-    public Cliente(int ID, String Nome, String Endereco, String Cep) {
-        super(ID, Nome);
+    public Cliente(String Nome, String Endereco, String Cep) {
+        super(Nome);
         this.Endereco = Endereco;
         this.Cep = Cep;
     }
-
-    
     
     public String getEndereco() {
         return Endereco;
@@ -53,7 +51,10 @@ public class Cliente extends Pessoa {
         this.Cep = Cep;
     }
     
-    
+    @Override
+    public String toString(){
+        return getNome();
+    }
 
     
     

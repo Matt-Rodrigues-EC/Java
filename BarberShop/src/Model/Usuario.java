@@ -24,13 +24,13 @@ public class Usuario extends Pessoa {
     private String Senha;
     private String NivelAcesso;
 
-    public Usuario(int ID, String Nome, String Senha) {
-        super(ID, Nome);
+    public Usuario(String Nome, String Senha) {
+        super(Nome);
         this.Senha = Senha;
     }
 
-    public Usuario(int ID, String Nome, String Senha, String NivelAcesso, char Sexo, String Nascimento, String Numero, String Email, String RG) {
-        super(ID, Nome, Sexo, Nascimento, Numero, Email, RG);
+    public Usuario(String Nome, char Sexo, String Nascimento, String Numero, String Email, String RG, String Senha, String NivelAcesso   ) {
+        super(Nome, Sexo, Nascimento, Numero, Email, RG);
         this.Senha = Senha;
         this.NivelAcesso = NivelAcesso;
     }

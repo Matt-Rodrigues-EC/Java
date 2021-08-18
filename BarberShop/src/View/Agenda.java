@@ -5,17 +5,27 @@
  */
 package View;
 
+import Controller.AgendaController;
+import javax.swing.JComboBox;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
 /**
  *
  * @author skees
  */
 public class Agenda extends javax.swing.JFrame {
 
+    private final AgendaController Controller;
+
     /**
      * Creates new form Agenda
      */
     public Agenda() {
         initComponents();
+        this.Controller = new AgendaController(this);
+        //Iniciar();
     }
 
     /**
@@ -27,28 +37,28 @@ public class Agenda extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
+        ID = new javax.swing.JLabel();
+        TextHora = new javax.swing.JTextField();
+        Observacoes = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel5 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        TextObservacao = new javax.swing.JTextArea();
+        BotaoAgendar = new javax.swing.JButton();
+        Cliente = new javax.swing.JLabel();
+        BoxServico = new javax.swing.JComboBox<>();
+        Servico = new javax.swing.JLabel();
+        BoxCliente = new javax.swing.JComboBox<>();
+        Valor = new javax.swing.JLabel();
+        TexteID = new javax.swing.JTextField();
+        Data = new javax.swing.JLabel();
+        TextValor = new javax.swing.JTextField();
+        Hora = new javax.swing.JLabel();
+        TextData = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TabelaAgendamentos = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1366, 768));
         setMinimumSize(new java.awt.Dimension(754, 454));
         setPreferredSize(new java.awt.Dimension(754, 474));
@@ -61,93 +71,103 @@ public class Agenda extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setFont(new java.awt.Font("Javanese Text", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("ID");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 70, -1));
+        ID.setFont(new java.awt.Font("Javanese Text", 0, 14)); // NOI18N
+        ID.setForeground(new java.awt.Color(255, 255, 255));
+        ID.setText("ID");
+        getContentPane().add(ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 70, -1));
 
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField1.setFont(new java.awt.Font("Javanese Text", 0, 12)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, 170, 30));
+        TextHora.setBackground(new java.awt.Color(255, 255, 255));
+        TextHora.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        TextHora.setForeground(new java.awt.Color(0, 0, 0));
+        getContentPane().add(TextHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, 170, 30));
 
-        jLabel9.setFont(new java.awt.Font("Javanese Text", 0, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Observações");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 60, -1, -1));
+        Observacoes.setFont(new java.awt.Font("Javanese Text", 0, 14)); // NOI18N
+        Observacoes.setForeground(new java.awt.Color(255, 255, 255));
+        Observacoes.setText("Observações");
+        getContentPane().add(Observacoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 60, -1, -1));
 
         jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane2.setForeground(new java.awt.Color(0, 0, 0));
 
-        jTextArea2.setBackground(new java.awt.Color(255, 255, 255));
-        jTextArea2.setColumns(20);
-        jTextArea2.setForeground(new java.awt.Color(0, 0, 0));
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
+        TextObservacao.setBackground(new java.awt.Color(255, 255, 255));
+        TextObservacao.setColumns(20);
+        TextObservacao.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        TextObservacao.setForeground(new java.awt.Color(0, 0, 0));
+        TextObservacao.setRows(5);
+        jScrollPane2.setViewportView(TextObservacao);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 100, 280, 150));
 
-        jButton1.setBackground(new java.awt.Color(0, 204, 51));
-        jButton1.setFont(new java.awt.Font("Javanese Text", 0, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("Agendar");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 260, 280, 30));
+        BotaoAgendar.setBackground(new java.awt.Color(0, 204, 51));
+        BotaoAgendar.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        BotaoAgendar.setForeground(new java.awt.Color(0, 0, 0));
+        BotaoAgendar.setText("Agendar");
+        BotaoAgendar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoAgendarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BotaoAgendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 260, 280, 30));
 
-        jLabel4.setFont(new java.awt.Font("Javanese Text", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Cliente");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 70, -1));
+        Cliente.setFont(new java.awt.Font("Javanese Text", 0, 14)); // NOI18N
+        Cliente.setForeground(new java.awt.Color(255, 255, 255));
+        Cliente.setText("Cliente");
+        getContentPane().add(Cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 70, -1));
 
-        jComboBox1.setBackground(new java.awt.Color(255, 255, 255));
-        jComboBox1.setFont(new java.awt.Font("Javanese Text", 0, 12)); // NOI18N
-        jComboBox1.setForeground(new java.awt.Color(0, 0, 0));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Serviço 1", "Serviço 2", "Serviço 3", " ", " " }));
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 170, 30));
+        BoxServico.setBackground(new java.awt.Color(255, 255, 255));
+        BoxServico.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        BoxServico.setForeground(new java.awt.Color(0, 0, 0));
+        BoxServico.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                BoxServicoItemStateChanged(evt);
+            }
+        });
+        getContentPane().add(BoxServico, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 170, 30));
 
-        jLabel5.setFont(new java.awt.Font("Javanese Text", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Serviço");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 70, -1));
+        Servico.setFont(new java.awt.Font("Javanese Text", 0, 14)); // NOI18N
+        Servico.setForeground(new java.awt.Color(255, 255, 255));
+        Servico.setText("Serviço");
+        getContentPane().add(Servico, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 70, -1));
 
-        jComboBox2.setBackground(new java.awt.Color(255, 255, 255));
-        jComboBox2.setFont(new java.awt.Font("Javanese Text", 0, 12)); // NOI18N
-        jComboBox2.setForeground(new java.awt.Color(0, 0, 0));
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cliente 1", "Cliente 2", "Cliente 3", " " }));
-        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, 170, 30));
+        BoxCliente.setBackground(new java.awt.Color(255, 255, 255));
+        BoxCliente.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        BoxCliente.setForeground(new java.awt.Color(0, 0, 0));
+        getContentPane().add(BoxCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, 170, 30));
 
-        jLabel6.setFont(new java.awt.Font("Javanese Text", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Valor R$");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 70, -1));
+        Valor.setFont(new java.awt.Font("Javanese Text", 0, 14)); // NOI18N
+        Valor.setForeground(new java.awt.Color(255, 255, 255));
+        Valor.setText("Valor R$");
+        getContentPane().add(Valor, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 70, -1));
 
-        jTextField2.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField2.setFont(new java.awt.Font("Javanese Text", 0, 12)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(0, 0, 0));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 170, 30));
+        TexteID.setBackground(new java.awt.Color(255, 255, 255));
+        TexteID.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        TexteID.setForeground(new java.awt.Color(0, 0, 0));
+        getContentPane().add(TexteID, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 170, 30));
 
-        jLabel7.setFont(new java.awt.Font("Javanese Text", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Data");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, 70, -1));
+        Data.setFont(new java.awt.Font("Javanese Text", 0, 14)); // NOI18N
+        Data.setForeground(new java.awt.Color(255, 255, 255));
+        Data.setText("Data");
+        getContentPane().add(Data, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, 70, -1));
 
-        jTextField3.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField3.setFont(new java.awt.Font("Javanese Text", 0, 12)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(0, 0, 0));
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 170, 30));
+        TextValor.setBackground(new java.awt.Color(255, 255, 255));
+        TextValor.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        TextValor.setForeground(new java.awt.Color(0, 0, 0));
+        getContentPane().add(TextValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 170, 30));
 
-        jLabel8.setFont(new java.awt.Font("Javanese Text", 0, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Hora");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 70, -1));
+        Hora.setFont(new java.awt.Font("Javanese Text", 0, 14)); // NOI18N
+        Hora.setForeground(new java.awt.Color(255, 255, 255));
+        Hora.setText("Hora");
+        getContentPane().add(Hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 70, -1));
 
-        jTextField4.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField4.setFont(new java.awt.Font("Javanese Text", 0, 12)); // NOI18N
-        jTextField4.setForeground(new java.awt.Color(0, 0, 0));
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, 170, 30));
+        TextData.setBackground(new java.awt.Color(255, 255, 255));
+        TextData.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        TextData.setForeground(new java.awt.Color(0, 0, 0));
+        getContentPane().add(TextData, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, 170, 30));
 
-        jTable1.setBackground(new java.awt.Color(255, 255, 255));
-        jTable1.setForeground(new java.awt.Color(0, 0, 0));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TabelaAgendamentos.setBackground(new java.awt.Color(255, 255, 255));
+        TabelaAgendamentos.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        TabelaAgendamentos.setForeground(new java.awt.Color(0, 0, 0));
+        TabelaAgendamentos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -158,16 +178,16 @@ public class Agenda extends javax.swing.JFrame {
                 "ID", "Cliente", "Serviço", "Valor", "Data", "Hora", "Observação"
             }
         ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
             };
 
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
-        jTable1.setShowGrid(true);
-        jScrollPane1.setViewportView(jTable1);
+        TabelaAgendamentos.setShowGrid(true);
+        jScrollPane1.setViewportView(TabelaAgendamentos);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 300, 540, 90));
 
@@ -185,6 +205,16 @@ public class Agenda extends javax.swing.JFrame {
         // TODO add your handling code here:
         
     }//GEN-LAST:event_formWindowStateChanged
+
+    private void BoxServicoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_BoxServicoItemStateChanged
+        // Atualiza sempre que que seleciona um item:
+        this.Controller.atualizaValor();
+    }//GEN-LAST:event_BoxServicoItemStateChanged
+
+    private void BotaoAgendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAgendarActionPerformed
+        // AAdiciona na agenda de eventos:
+        this.Controller.Agendar();
+    }//GEN-LAST:event_BotaoAgendarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -222,25 +252,99 @@ public class Agenda extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JButton BotaoAgendar;
+    private javax.swing.JComboBox<String> BoxCliente;
+    private javax.swing.JComboBox<String> BoxServico;
+    private javax.swing.JLabel Cliente;
+    private javax.swing.JLabel Data;
+    private javax.swing.JLabel Hora;
+    private javax.swing.JLabel ID;
+    private javax.swing.JLabel Observacoes;
+    private javax.swing.JLabel Servico;
+    private javax.swing.JTable TabelaAgendamentos;
+    private javax.swing.JTextField TextData;
+    private javax.swing.JTextField TextHora;
+    private javax.swing.JTextArea TextObservacao;
+    private javax.swing.JTextField TextValor;
+    private javax.swing.JTextField TexteID;
+    private javax.swing.JLabel Valor;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
+
+    private void Iniciar() {
+        this.Controller.atualizaTabela();
+        this.Controller.atualizaCliente();
+        this.Controller.atualizaServico();
+        this.Controller.atualizaValor();
+    }
+
+    public JTable getTabelaAgendamentos() {
+        return TabelaAgendamentos;
+    }
+
+    public void setTabelaAgendamentos(JTable TabelaAgendamentos) {
+        this.TabelaAgendamentos = TabelaAgendamentos;
+    }
+
+    public JComboBox<String> getBoxCliente() {
+        return BoxCliente;
+    }
+
+    public void setBoxCliente(JComboBox<String> BoxCliente) {
+        this.BoxCliente = BoxCliente;
+    }
+
+    public JComboBox<String> getBoxServico() {
+        return BoxServico;
+    }
+
+    public void setBoxServico(JComboBox<String> BoxServico) {
+        this.BoxServico = BoxServico;
+    }
+
+    public JTextField getTextValor() {
+        return TextValor;
+    }
+
+    public void setTextValor(JTextField TextValor) {
+        this.TextValor = TextValor;
+    }
+
+    public JTextField getTexteID() {
+        return TexteID;
+    }
+
+    public void setTexteID(JTextField TexteID) {
+        this.TexteID = TexteID;
+    }
+
+    public JTextField getTextData() {
+        return TextData;
+    }
+
+    public void setTextData(JTextField TextData) {
+        this.TextData = TextData;
+    }
+
+    public JTextField getTextHora() {
+        return TextHora;
+    }
+
+    public void setTextHora(JTextField TextHora) {
+        this.TextHora = TextHora;
+    }
+
+    public JTextArea getTextObservacao() {
+        return TextObservacao;
+    }
+
+    public void setTextObservacao(JTextArea TextObservacao) {
+        this.TextObservacao = TextObservacao;
+    }
+
+    
+
 }

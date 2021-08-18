@@ -25,13 +25,12 @@ abstract public class Pessoa {
     protected String Email;
     protected String RG; // Ou CPF
 
-    public Pessoa(int ID, String Nome) {
+    public Pessoa (String Nome) {
         this.ID = ID;
         this.Nome = Nome;
     }
 
-    public Pessoa(int ID, String Nome, char Sexo, String Nascimento, String Numero, String Email, String RG) {
-        this.ID = ID;
+    public Pessoa(String Nome, char Sexo, String Nascimento, String Numero, String Email, String RG) {
         this.Nome = Nome;
         this.Sexo = Sexo;
         try {
@@ -51,7 +50,7 @@ abstract public class Pessoa {
     public void setID(int ID) {
         this.ID = ID;
     }
-
+    
     public String getNome() {
         return Nome;
     }

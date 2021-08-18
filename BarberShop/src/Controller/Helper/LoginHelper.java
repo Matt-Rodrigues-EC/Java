@@ -12,20 +12,12 @@ import View.Login;
  *
  * @author skees
  */
-public class LoginHelper {
+public class LoginHelper implements IHelper{
     
     private final Login View;
 
     public LoginHelper(Login View) {
         this.View = View;
-    }
-    
-    public Usuario obterModelo(){
-        String Nome = View.getTextUsuario().getText();
-        String Senha = View.getTextSenha().getText();
-        Usuario Modelo =  new Usuario(0, Nome, Senha);
-        
-        return Modelo;
     }
     
     public void setarUsuario(Usuario Modelo){
@@ -37,9 +29,19 @@ public class LoginHelper {
         View.getTextSenha().setText(Senha);
     }
     
+    @Override
     public void limparTela(){
         View.getTextUsuario().setText("");
         View.getTextSenha().setText("");
+    }
+
+    @Override
+    public Usuario ObterModelo() {
+        String Nome = View.getTextUsuario().getText();
+        String Senha = View.getTextSenha().getText();
+        Usuario Modelo =  new Usuario(Nome, Senha);
+        
+        return Modelo;
     }
     
 }

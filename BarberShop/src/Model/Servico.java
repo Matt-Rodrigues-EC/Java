@@ -15,10 +15,13 @@ public class Servico {
     private String Descricao;
     private double Valor;
 
-    public Servico(int ID, String Descricao, double Valor) {
-        this.ID = ID;
+    public Servico(String Descricao, double Valor) {
         this.Descricao = Descricao;
         this.Valor = Valor;
+    }
+
+    public Servico(int i, String corte_Simples, int i0) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public String getDescricao() {
@@ -36,7 +39,19 @@ public class Servico {
     public void setValor(double Valor) {
         this.Valor = Valor;
     }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
     
+    @Override
+    public String toString(){
+        return getDescricao();
+    }
     
     
 }

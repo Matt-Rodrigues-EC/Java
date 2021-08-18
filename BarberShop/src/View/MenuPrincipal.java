@@ -5,17 +5,22 @@
  */
 package View;
 
+import Controller.MenuPrincipalController;
+
 /**
  *
  * @author skees
  */
 public class MenuPrincipal extends javax.swing.JFrame {
 
+    private final MenuPrincipalController Controller;
+
     /**
      * Creates new form MenuPrincipal
      */
     public MenuPrincipal() {
         initComponents();
+        this.Controller = new MenuPrincipalController(this);
     }
 
     /**
@@ -34,6 +39,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         MenuItemServico = new javax.swing.JMenuItem();
         MenuItemUsuario = new javax.swing.JMenuItem();
         MenuOperacao = new javax.swing.JMenu();
+        MenuItemAgenda = new javax.swing.JMenuItem();
         MenuRelatorio = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -58,22 +64,48 @@ public class MenuPrincipal extends javax.swing.JFrame {
         MenuItemCliente.setFont(new java.awt.Font("Javanese Text", 0, 14)); // NOI18N
         MenuItemCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/icons/cliente-icon.png"))); // NOI18N
         MenuItemCliente.setLabel("Cliente");
+        MenuItemCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItemClienteActionPerformed(evt);
+            }
+        });
         MenuCadastro.add(MenuItemCliente);
 
         MenuItemServico.setFont(new java.awt.Font("Javanese Text", 0, 14)); // NOI18N
         MenuItemServico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/icons/tesoura-icon.png"))); // NOI18N
         MenuItemServico.setText("Serviço");
+        MenuItemServico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItemServicoActionPerformed(evt);
+            }
+        });
         MenuCadastro.add(MenuItemServico);
 
         MenuItemUsuario.setFont(new java.awt.Font("Javanese Text", 0, 14)); // NOI18N
         MenuItemUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/icons/usuario-icon.png"))); // NOI18N
         MenuItemUsuario.setText("Usuário");
+        MenuItemUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItemUsuarioActionPerformed(evt);
+            }
+        });
         MenuCadastro.add(MenuItemUsuario);
 
         jMenuBar1.add(MenuCadastro);
 
         MenuOperacao.setText("Operação");
         MenuOperacao.setFont(new java.awt.Font("Javanese Text", 0, 14)); // NOI18N
+
+        MenuItemAgenda.setFont(new java.awt.Font("Javanese Text", 0, 14)); // NOI18N
+        MenuItemAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/icons/agenda-icon.png"))); // NOI18N
+        MenuItemAgenda.setText("Agenda");
+        MenuItemAgenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItemAgendaActionPerformed(evt);
+            }
+        });
+        MenuOperacao.add(MenuItemAgenda);
+
         jMenuBar1.add(MenuOperacao);
 
         MenuRelatorio.setFont(new java.awt.Font("Javanese Text", 0, 14)); // NOI18N
@@ -84,6 +116,26 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void MenuItemAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemAgendaActionPerformed
+        // TODO add your handling code here:
+        this.Controller.NavegarParaAgenda();
+    }//GEN-LAST:event_MenuItemAgendaActionPerformed
+
+    private void MenuItemClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemClienteActionPerformed
+        // TODO add your handling code here:
+        this.Controller.NavegarParaCadastroCliente();
+    }//GEN-LAST:event_MenuItemClienteActionPerformed
+
+    private void MenuItemUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemUsuarioActionPerformed
+        // TODO add your handling code here:
+        this.Controller.NavegarParaCadastroUsuario();
+    }//GEN-LAST:event_MenuItemUsuarioActionPerformed
+
+    private void MenuItemServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemServicoActionPerformed
+        // TODO add your handling code here:
+        this.Controller.NavegarParaCadastroServico();
+    }//GEN-LAST:event_MenuItemServicoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -122,6 +174,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu MenuCadastro;
+    private javax.swing.JMenuItem MenuItemAgenda;
     private javax.swing.JMenuItem MenuItemCliente;
     private javax.swing.JMenuItem MenuItemServico;
     private javax.swing.JMenuItem MenuItemUsuario;

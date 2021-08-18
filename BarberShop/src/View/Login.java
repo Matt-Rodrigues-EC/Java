@@ -6,6 +6,7 @@
 package View;
 
 import Controller.LoginController;
+import Model.DAO.Banco;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -24,6 +25,7 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         controller = new LoginController(this);
+        Banco.inicia();
     }
 
     /**
@@ -51,35 +53,36 @@ public class Login extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        LabelLogin.setFont(new java.awt.Font("N-Gage", 0, 48)); // NOI18N
+        LabelLogin.setFont(new java.awt.Font("Freehand521 BT", 0, 48)); // NOI18N
         LabelLogin.setForeground(new java.awt.Color(255, 255, 255));
+        LabelLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelLogin.setText("Login");
         getContentPane().add(LabelLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, 220, 80));
 
-        Usuario.setFont(new java.awt.Font("N-Gage", 0, 24)); // NOI18N
+        Usuario.setFont(new java.awt.Font("Freehand521 BT", 0, 24)); // NOI18N
         Usuario.setForeground(new java.awt.Color(255, 255, 255));
         Usuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Usuario.setText("Usuário");
         getContentPane().add(Usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, 170, 50));
 
         TextUsuario.setBackground(new java.awt.Color(255, 255, 255));
-        TextUsuario.setFont(new java.awt.Font("Javanese Text", 0, 14)); // NOI18N
+        TextUsuario.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         TextUsuario.setForeground(new java.awt.Color(0, 0, 0));
-        getContentPane().add(TextUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, 240, 30));
+        getContentPane().add(TextUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, 230, 30));
 
-        Senha.setFont(new java.awt.Font("N-Gage", 0, 24)); // NOI18N
+        Senha.setFont(new java.awt.Font("Freehand521 BT", 0, 24)); // NOI18N
         Senha.setForeground(new java.awt.Color(255, 255, 255));
         Senha.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Senha.setText("Senha");
         getContentPane().add(Senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 190, 140, 30));
 
         TextSenha.setBackground(new java.awt.Color(255, 255, 255));
-        TextSenha.setFont(new java.awt.Font("Javanese Text", 0, 14)); // NOI18N
+        TextSenha.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         TextSenha.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(TextSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, 230, 30));
 
         BotaoLogin.setBackground(new java.awt.Color(51, 51, 51));
-        BotaoLogin.setFont(new java.awt.Font("N-Gage", 0, 12)); // NOI18N
+        BotaoLogin.setFont(new java.awt.Font("Freehand521 BT", 0, 18)); // NOI18N
         BotaoLogin.setForeground(new java.awt.Color(255, 255, 255));
         BotaoLogin.setText("Login");
         BotaoLogin.addActionListener(new java.awt.event.ActionListener() {
@@ -93,7 +96,7 @@ public class Login extends javax.swing.JFrame {
         LabelFundoLogin.setText("jLabel2");
         getContentPane().add(LabelFundoLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, -30, 620, 460));
 
-        LabelBackgroundLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/Logo.png"))); // NOI18N
+        LabelBackgroundLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/Login.png"))); // NOI18N
         LabelBackgroundLogin.setMaximumSize(new java.awt.Dimension(1366, 768));
         getContentPane().add(LabelBackgroundLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -102,7 +105,8 @@ public class Login extends javax.swing.JFrame {
 
     private void BotaoLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoLoginActionPerformed
         // Executa quando clica no botão
-        this.controller.FizTarefa();
+        //this.controller.FizTarefa();
+        this.controller.entrarNoSistema();
     }//GEN-LAST:event_BotaoLoginActionPerformed
 
     /**
