@@ -23,10 +23,14 @@ public class AgendaController {
     
     private final Agenda View;
     private final AgendaHelper Helper;
+    private final ClienteDAO clienteDAO;
+    private final ServicoDAO servicoDAO;
 
     public AgendaController(Agenda View) {
         this.View = View;
         this.Helper = new AgendaHelper(View);
+        this.clienteDAO = new ClienteDAO(null);
+        this.servicoDAO = new ServicoDAO(null);
     }
     
     public void atualizaTabela(){
@@ -40,7 +44,7 @@ public class AgendaController {
     
     public void atualizaCliente(){
         //buscar no banco de dados
-        ClienteDAO clienteDAO = new ClienteDAO();
+        clienteDAO.selectAll();
         ArrayList<Cliente> Clientes = clienteDAO.selectAll();
         //exibir no combobox cliente
         Helper.preencherClientes(Clientes);
@@ -48,7 +52,7 @@ public class AgendaController {
     
     public void atualizaServico(){
         //buscar no banco de dados
-        ServicoDAO servicoDAO = new ServicoDAO();
+        servicoDAO .selectAll();
         ArrayList<Servico> Servicos = servicoDAO.selectAll();
         //exibir no combobox seriço
         Helper.preencherServicos(Servicos);

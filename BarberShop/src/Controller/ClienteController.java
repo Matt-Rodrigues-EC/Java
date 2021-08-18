@@ -20,10 +20,12 @@ public class ClienteController {
  
     private final ClienteView View;
     private final ClienteHelper Helper;
+    private final ClienteDAO clienteDAO;
 
     public ClienteController(ClienteView View) {
         this.View = View;
         this.Helper = new ClienteHelper(View);
+        this.clienteDAO = new ClienteDAO(null);
     }
 
     
@@ -32,7 +34,7 @@ public class ClienteController {
         //buscar o objeto na tela
         Cliente cliente = (Cliente) Helper.ObterModelo();
         //adicionar o objeto no BD
-        new ClienteDAO().insert(cliente);
+        clienteDAO.insert(cliente);
     }
     
     

@@ -29,7 +29,7 @@ public class Usuario extends Pessoa {
         this.Senha = Senha;
     }
 
-    public Usuario(String Nome, char Sexo, String Nascimento, String Numero, String Email, String RG, String Senha, String NivelAcesso   ) {
+    public Usuario(String Nome, String Sexo, String Nascimento, String Numero, String Email, String RG, String Senha, String NivelAcesso   ) {
         super(Nome, Sexo, Nascimento, Numero, Email, RG);
         this.Senha = Senha;
         this.NivelAcesso = NivelAcesso;

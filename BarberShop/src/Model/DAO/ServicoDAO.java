@@ -6,6 +6,9 @@
 package Model.DAO;
 
 import Model.Servico;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Connection;
 import java.util.ArrayList;
 
 /**
@@ -15,12 +18,28 @@ import java.util.ArrayList;
 public class ServicoDAO {
     
     
+    private final Connection Connection;
+
+    public ServicoDAO(Connection Connection) {
+        this.Connection = Connection;
+    }
+    
+    
+    
     /**
      * Insere um servico dentro do banco de dados
      * @param servico exige que seja passado um objeto do tipo servico
      */
-    public void insert(Servico servico){
-        Banco.servico.add(servico);
+    public void insert(Servico servico) throws SQLException{
+        
+        String sql  = "INSERT INTO servico (descricao, valor) "
+                + "   VALUES (?, ?);";	
+	//insert into Cliente
+	PreparedStatement std = Connection.prepareStatement(sql);
+        
+        std.executeQuery();
+        Connection.close();
+        
     }
     
     /**
@@ -30,12 +49,6 @@ public class ServicoDAO {
      */
     public boolean update(Servico servico){
         
-        for (int i = 0; i < Banco.servico.size(); i++) {
-            if(idSaoIguais(Banco.servico.get(i),servico)){
-                Banco.servico.set(i, servico);
-                return true;
-            }
-        }
         return false;      
 
     }
@@ -46,12 +59,7 @@ public class ServicoDAO {
      * @return 
      */
     public boolean delete(Servico servico){
-        for (Servico servicoLista : Banco.servico) {
-            if(idSaoIguais(servicoLista,servico)){
-                Banco.servico.remove(servicoLista);
-                return true;
-            }
-        }
+       
         return false;
     }
     

@@ -6,6 +6,9 @@
 package Model.DAO;
 
 import Model.Usuario;
+import java.sql.PreparedStatement;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
@@ -14,12 +17,36 @@ import java.util.ArrayList;
  */
 public class UsuarioDAO {
     
+    private final Connection Connection;
+
+    public UsuarioDAO(Connection connection) {
+        this.Connection = connection;
+    }
+    
     /**
      * Insere um usuario dentro do banco de dados
      * @param usuario exige que seja passado um objeto do tipo usuario
+     * @throws java.lang.Exception
      */
-    public void insert(Usuario usuario){
-        Banco.usuario.add(usuario);
+    public void insert(Usuario usuario) throws Exception{
+      
+        try (Connection) {
+            
+            String sql  = "INSERT INTO usuario (nome, sexo, data_nascimento, numero, email, RG, Senha, Nivel_Acesso) "
+                    + "   VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
+            //insert into Usuario
+            PreparedStatement std = Connection.prepareStatement(sql);
+            std.setString(1, usuario.getNome());
+            std.setString(2, usuario.getSexo());
+            std.setString(3, usuario.getNascimento());
+            std.setString(4, usuario.getNumero());
+            std.setString(5, usuario.getEmail());
+            std.setString(6, usuario.getRG());
+            std.setString(7, usuario.getSenha());
+            std.setString(8, usuario.getNivelAcesso());
+            
+            std.executeQuery();
+        }
     }
     
     /**
@@ -29,12 +56,6 @@ public class UsuarioDAO {
      */
     public boolean update(Usuario usuario){
         
-        for (int i = 0; i < Banco.usuario.size(); i++) {
-            if(idSaoIguais(Banco.usuario.get(i),usuario)){
-                Banco.usuario.set(i, usuario);
-                return true;
-            }
-        }
         return false;      
 
     }
@@ -45,12 +66,7 @@ public class UsuarioDAO {
      * @return 
      */
     public boolean delete(Usuario usuario){
-        for (Usuario usuarioLista : Banco.usuario) {
-            if(idSaoIguais(usuarioLista,usuario)){
-                Banco.usuario.remove(usuarioLista);
-                return true;
-            }
-        }
+        
         return false;
     }
     
@@ -68,11 +84,7 @@ public class UsuarioDAO {
      * @return Usuario encontrado no banco de dados
      */
     public Usuario selectPorNomeESenha(Usuario usuario){
-        for (Usuario usuarioLista : Banco.usuario) {
-            if(nomeESenhaSaoIguais(usuarioLista,usuario)){
-                return usuarioLista;
-            }
-        }
+        
         return null;
     }
 

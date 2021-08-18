@@ -29,7 +29,7 @@ public class LoginController {
         Usuario user = Helper.ObterModelo();
         
         //Pesquisar um usuário no Banco
-        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        UsuarioDAO usuarioDAO = new UsuarioDAO(null);
         Usuario usuarioAutenticado = usuarioDAO.selectPorNomeESenha(user);
         
         //Se o usuaario da View existir no banco, redireciona pro Menu

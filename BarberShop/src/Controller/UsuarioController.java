@@ -18,17 +18,19 @@ public class UsuarioController {
  
     private final UsuarioView View;
     private final UsuarioHelper Helper;
+    private final UsuarioDAO userDAO;
 
     public UsuarioController(UsuarioView View) {
         this.View = View;
         this.Helper = new UsuarioHelper(View);
+        this.userDAO = new UsuarioDAO(null);
     }
     
-    public void CadastrarUsuario(){
+    public void CadastrarUsuario() throws Exception{
         //buscar objeto na tela
         Usuario usuario = (Usuario) Helper.ObterModelo();
         //adicionar o objeto no BD
-        new UsuarioDAO().insert(usuario);
+        userDAO.insert(usuario);
     }
     
     

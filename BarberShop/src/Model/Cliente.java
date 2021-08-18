@@ -23,7 +23,7 @@ public class Cliente extends Pessoa {
     private String Endereco;
     private String Cep;
 
-    public Cliente(String Nome, char Sexo, String Nascimento, String Numero, String Email, String RG, String Endereco, String Cep) {
+    public Cliente(String Nome, String Sexo, String Nascimento, String Numero, String Email, String RG, String Endereco, String Cep) {
         super(Nome, Sexo, Nascimento, Numero, Email, RG);
         this.Endereco = Endereco;
         this.Cep = Cep;

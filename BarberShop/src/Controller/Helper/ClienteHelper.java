@@ -24,7 +24,7 @@ public class ClienteHelper implements IHelper{
     public Object ObterModelo() {
         
         String Nome = View.getTextNome().getText();
-        char Sexo = (char) View.getBoxSexo().getSelectedItem();
+        String Sexo = (String) View.getBoxSexo().getSelectedItem();
         String Nascimento = View.getTextNascimento().getText();
         String Numero = View.getTextNumero().getText();
         String Email = View.getTextEmail().getText();

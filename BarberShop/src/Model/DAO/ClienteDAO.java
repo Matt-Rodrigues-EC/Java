@@ -22,38 +22,40 @@ public class ClienteDAO {
     public ClienteDAO(Connection Connection) {
         this.Connection = Connection;
     }
+    
 
-    public ClienteDAO() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
     public void insert(Cliente cliente) throws SQLException{
         
-        String sql = "INSERT INTO cliente (nome, sexo, data_nascimento, contato, email, cpf, endereco, cep) "
-                + "   VALUES (?, ?, ?, ?, ?, ?, ?, ?);";	
-	//insert into Cliente
-	PreparedStatement std = Connection.prepareStatement(sql);
+        
+        try (Connection) {
+            String sql  = "INSERT INTO cliente (nome, sexo, data_nascimento, numero, email, RG, endereco, cep) "
+                    + "   VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
+            //insert into Cliente
+            PreparedStatement std = Connection.prepareStatement(sql);
+            std.setString(1, cliente.getNome());
+            std.setString(2, cliente.getSexo());
+            std.setString(3, cliente.getNascimento());
+            std.setString(4, cliente.getNumero());
+            std.setString(5, cliente.getEmail());
+            std.setString(6, cliente.getRG());
+            std.setString(7, cliente.getEndereco());
+            std.setString(8, cliente.getCep());
+            
+            std.executeQuery();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
     }
     
     public boolean update(Cliente cliente){
         
-        for (int i = 0; i < Banco.cliente.size(); i++) {
-            if(idSaoIguais(Banco.cliente.get(i),cliente)){
-                Banco.cliente.set(i, cliente);
-                return true;
-            }
-        }
         return false;      
 
     }
     
     public boolean delete(Cliente cliente){
-        for (Cliente clienteLista : Banco.cliente) {
-            if(idSaoIguais(clienteLista,cliente)){
-                Banco.cliente.remove(clienteLista);
-                return true;
-            }
-        }
+        
         return false;
     }
     

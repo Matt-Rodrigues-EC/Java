@@ -24,7 +24,7 @@ public class ServicoHelper implements IHelper {
     public Object ObterModelo() {
         String descricao = View.getTextDescricao().getText();
         String valorString = View.getTextValor().getText();
-        double valor = Double.parseDouble(valorString+"");
+        float valor = Float.parseFloat(valorString+"");
         
         Servico servico = new Servico(descricao, valor);
         return servico;

@@ -19,8 +19,8 @@ abstract public class Pessoa {
     
     protected int ID;
     protected String Nome;
-    protected char Sexo;
-    protected Date Nascimento;
+    protected String Sexo;
+    protected String Nascimento;
     protected String Numero;
     protected String Email;
     protected String RG; // Ou CPF
@@ -30,14 +30,10 @@ abstract public class Pessoa {
         this.Nome = Nome;
     }
 
-    public Pessoa(String Nome, char Sexo, String Nascimento, String Numero, String Email, String RG) {
+    public Pessoa(String Nome, String Sexo, String Nascimento, String Numero, String Email, String RG) {
         this.Nome = Nome;
         this.Sexo = Sexo;
-        try {
-            this.Nascimento = new SimpleDateFormat("dd/MM/yyyy").parse(Nascimento);
-        } catch (ParseException ex) {
-            Logger.getLogger(Pessoa.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        this.Nascimento = Nascimento;
         this.Numero = Numero;
         this.Email = Email;
         this.RG = RG;
@@ -59,19 +55,19 @@ abstract public class Pessoa {
         this.Nome = Nome;
     }
 
-    public char getSexo() {
+    public String getSexo() {
         return Sexo;
     }
 
-    public void setSexo(char Sexo) {
+    public void setSexo(String Sexo) {
         this.Sexo = Sexo;
     }
 
-    public Date getNascimento() {
+    public String getNascimento() {
         return Nascimento;
     }
 
-    public void setNascimento(Date Nascimento) {
+    public void setNascimento(String Nascimento) {
         this.Nascimento = Nascimento;
     }
 

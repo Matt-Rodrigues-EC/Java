@@ -9,6 +9,7 @@ import Controller.Helper.ServicoHelper;
 import Model.Servico;
 import View.ServicoView;
 import Model.DAO.ServicoDAO;
+import java.sql.SQLException;
 
 /**
  *
@@ -18,17 +19,19 @@ public class ServicoController {
     
     private final ServicoView View;
     private final ServicoHelper Helper;
+    private final ServicoDAO servicoDAO;
 
     public ServicoController(ServicoView View) {
         this.View = View;
         this.Helper = new ServicoHelper(View);
+        this.servicoDAO = new ServicoDAO(null);
     }
     
-    public void CdastrarServico(){
+    public void CadastrarServico() throws SQLException{
         //Buscar Servico na tela
         Servico servico = (Servico) Helper.ObterModelo();
         //Adicionar servico no BD
-        new ServicoDAO().insert(servico);
+        servicoDAO.insert(servico);
     }
     
     

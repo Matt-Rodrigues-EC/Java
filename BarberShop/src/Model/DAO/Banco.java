@@ -33,19 +33,19 @@ public class Banco {
         
         //criando elementos
         
-        Usuario usuario1 = new Usuario("barbeiro", 'M', "09/05/1996", "30212121", "barbeiro@barbershop.com", "521454123", "barbeiro", "administrador");
-        Usuario usuario2 = new Usuario("estagiario", 'M', "09/05/1996", "30212122", "estagiario@barbershop.com", "451244123", "estagiario", "funcionario");
-         
-        Cliente cliente1 = new Cliente("Alan Figueiredo", 'M', "30/01/1995", "30212126", "tiagoluz.h607@gmail.com", "5142487", "Rua jaboti 35 Canudos NH",  "93300012");
-        Cliente cliente2 = new Cliente("Judite Oliveira", 'F', "30/08/1994", "30212127", "juditeoliveirapet@gmail.com", "5142487745", "Rua campo bom 78 Centro NH",  "93300045");
-        Cliente cliente3 = new Cliente("Paulo Ricado", 'M', "24/04/1997", "30212128", "pauloricardopet@gmail.com", "78451458", "Rua Tres Irmaos 30 Vila Nova - NH",  "933007496");
-        Cliente cliente4 = new Cliente("Neymar Santos", 'M', "20/08/1995", "30212130", "neymarsantospet@gmail.com", "2745487", "Rua Lombardi 40 Canudos NH",  "93300748");
-        Cliente cliente5 = new Cliente("Debruine Pipoqueiro", 'M', "13/09/1992", "30212131", "debruinepet@gmail.com", "4742487", "Rua pedro quaresma 784 Canudos Belgica",  "933000847");
-        Cliente cliente6 = new Cliente("Matuidi Pareira", 'M', "17/08/1994", "302122324", "matuidipet@gmail.com", "78512457", "Rua champions 10 Kephas Franca",  "933000782");
-        Cliente cliente7 = new Cliente("Marta de Souza", 'F', "25/03/1993", "302121292", "martasouzapet@gmail.com", "4658237314", "Rua tesla 215 Canudos NH",  "93352012");
-        Cliente cliente8 = new Cliente("Aline Ferrari", 'F', "04/03/1990", "302121451", "alineferraripet@gmail.com", "8475123687", "Rua hyrule 32 Canudos NH",  "9334714747");
-        Cliente cliente9 = new Cliente("Samuel Coltinho", 'M', "09/02/1998", "302121189", "samuelcoltinhopet@gmail.com", "74595142487", "Rua floresta 12 Canudos NH",  "9330046364");
-        Cliente cliente10 = new Cliente("Felipe Luis", 'M', "12/06/1999", "3021212478", "felipeluispet@gmail.com", "845713647", "Rua marechal 1023 Canudos NH",  "933000874");
+        Usuario usuario1 = new Usuario("barbeiro", "M", "09/05/1996", "30212121", "barbeiro@barbershop.com", "521454123", "barbeiro", "administrador");
+        Usuario usuario2 = new Usuario("estagiario", "M", "09/05/1996", "30212122", "estagiario@barbershop.com", "451244123", "estagiario", "funcionario");
+       
+        Cliente cliente1 = new Cliente("Alan Figueiredo", "M", "30/01/1995", "30212126", "tiagoluz.h607@gmail.com", "5142487", "Rua jaboti 35 Canudos NH",  "93300012");
+        Cliente cliente2 = new Cliente("Judite Oliveira", "F", "30/08/1994", "30212127", "juditeoliveirapet@gmail.com", "5142487745", "Rua campo bom 78 Centro NH",  "93300045");
+        Cliente cliente3 = new Cliente("Paulo Ricado", "M", "24/04/1997", "30212128", "pauloricardopet@gmail.com", "78451458", "Rua Tres Irmaos 30 Vila Nova - NH",  "933007496");
+        Cliente cliente4 = new Cliente("Neymar Santos", "M", "20/08/1995", "30212130", "neymarsantospet@gmail.com", "2745487", "Rua Lombardi 40 Canudos NH",  "93300748");
+        Cliente cliente5 = new Cliente("Debruine Pipoqueiro", "M", "13/09/1992", "30212131", "debruinepet@gmail.com", "4742487", "Rua pedro quaresma 784 Canudos Belgica",  "933000847");
+        Cliente cliente6 = new Cliente("Matuidi Pareira", "M", "17/08/1994", "302122324", "matuidipet@gmail.com", "78512457", "Rua champions 10 Kephas Franca",  "933000782");
+        Cliente cliente7 = new Cliente("Marta de Souza", "M", "25/03/1993", "302121292", "martasouzapet@gmail.com", "4658237314", "Rua tesla 215 Canudos NH",  "93352012");
+        Cliente cliente8 = new Cliente("Aline Ferrari", "M", "04/03/1990", "302121451", "alineferraripet@gmail.com", "8475123687", "Rua hyrule 32 Canudos NH",  "9334714747");
+        Cliente cliente9 = new Cliente("Samuel Coltinho", "M", "09/02/1998", "302121189", "samuelcoltinhopet@gmail.com", "74595142487", "Rua floresta 12 Canudos NH",  "9330046364");
+        Cliente cliente10 = new Cliente("Felipe Luis", "M", "12/06/1999", "3021212478", "felipeluispet@gmail.com", "845713647", "Rua marechal 1023 Canudos NH",  "933000874");
         
         Servico servico1 = new Servico("Corte Simples", 18);
         Servico servico2 = new Servico("Corte Degrade", 30);
